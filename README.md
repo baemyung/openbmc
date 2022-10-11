@@ -49,7 +49,7 @@ of supported hardware targets, see the following example:
 $ . setup <machine> [build_dir]
 Target machine must be specified. Use one of:
 
-bletchley               mihawk                  swift
+bletchley               s8036                   swift
 dl360poc                mori                    tatlin-archive-x86
 e3c246d4i               mtjade                  tiogapass
 ethanolx                nicole                  transformers
@@ -62,7 +62,7 @@ g220a                   romulus                 x11spi
 gbs                     s2600wf                 yosemitev2
 gsj                     s6q                     zaius
 kudo                    s7106
-lannister               s8036
+lannister
 ```
 
 Once you know the target (e.g. romulus), source the `setup` script as follows:
