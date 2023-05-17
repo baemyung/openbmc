@@ -3785,6 +3785,154 @@
                     ]
                 }
             ]
+        },
+        {
+            "path": "system/chassis/motherboard/disk_backplane0/dp0_port1",
+            "endpoints":
+            [
+                {
+                    "types":
+                    {
+                        "rType": "identified_by",
+                        "fType": "identifying"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/led/groups/dp0_port1_identify"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "inventory",
+                        "fType": "chassis"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis"
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "system/chassis/motherboard/disk_backplane0/dp0_port2",
+            "endpoints":
+            [
+                {
+                    "types":
+                    {
+                        "rType": "identified_by",
+                        "fType": "identifying"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/led/groups/dp0_port2_identify"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "inventory",
+                        "fType": "chassis"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis"
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "system/chassis/motherboard/disk_backplane0",
+            "endpoints":
+            [
+                {
+                    "types":
+                    {
+                        "rType": "connected_to",
+                        "fType": "connecting"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/disk_backplane0/dp0_port1",
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/disk_backplane0/dp0_port2"
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "system/chassis/motherboard/disk_backplane1/dp1_port1",
+            "endpoints":
+            [
+                {
+                    "types":
+                    {
+                        "rType": "identified_by",
+                        "fType": "identifying"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/led/groups/dp1_port1_identify"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "inventory",
+                        "fType": "chassis"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis"
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "system/chassis/motherboard/disk_backplane1/dp1_port2",
+            "endpoints":
+            [
+                {
+                    "types":
+                    {
+                        "rType": "identified_by",
+                        "fType": "identifying"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/led/groups/dp1_port2_identify"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "inventory",
+                        "fType": "chassis"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis"
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "system/chassis/motherboard/disk_backplane1",
+            "endpoints":
+            [
+                {
+                    "types":
+                    {
+                        "rType": "connected_to",
+                        "fType": "connecting"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/disk_backplane1/dp1_port1",
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/disk_backplane1/dp1_port2"
+                    ]
+                }
+            ]
         }
     ]
 }
