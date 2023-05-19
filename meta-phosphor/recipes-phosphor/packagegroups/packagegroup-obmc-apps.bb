@@ -69,6 +69,7 @@ RDEPENDS:${PN}-devtools = " \
         lrzsz \
         rsync \
         trace-enable \
+        socat \
         "
 
 EXTRA_DEV_DEBUG_TOOLS = "gdbserver strace opkg curl"
