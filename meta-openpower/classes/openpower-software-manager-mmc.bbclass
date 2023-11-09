@@ -6,3 +6,5 @@ SYSTEMD_SERVICE:${PN} += " \
     openpower-bios-factory-reset.service \
     obmc-recover-pnor.service \
 "
+
+RDEPENDS:${PN}:append:p10bmc = " phosphor-hostfw-image"
