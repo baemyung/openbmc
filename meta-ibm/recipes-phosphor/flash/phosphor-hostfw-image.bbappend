@@ -18,7 +18,7 @@ HOST_FW_LICENSE = "Proprietary"
 #    new json file (if it changed), the image-hostfw-$VERSION.hostfw files, and this
 #    file.
 
-VERSION:p10bmc ?= "1110.2417.20240425a"
+VERSION:p10bmc ?= "1110.2431.20240725a"
 
 SRC_URI:append:p10bmc = " file://host-fw-elements_lids.json"
 SRC_URI:append:p10bmc = " file://rainier/image-hostfw-${VERSION}.hostfw"
