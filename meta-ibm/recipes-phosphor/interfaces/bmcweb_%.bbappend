@@ -6,6 +6,7 @@ EXTRA_OEMESON:append = " \
     -Dinsecure-enable-redfish-query=enabled \
     -Dredfish-dbus-log=enabled \
     -Dhttp-body-limit=400 \
+    -Dbmcweb-logging=info \
 "
 
 EXTRA_OEMESON:append:p10bmc = " \
