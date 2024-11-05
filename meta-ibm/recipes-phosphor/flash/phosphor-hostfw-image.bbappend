@@ -28,7 +28,8 @@ FILES:${PN}:append:p10bmc = " ${datadir}/hostfw/elements.json"
 
 DEPENDS:p10bmc = "squashfs-tools-native"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 B = "${WORKDIR}/build"
 
 do_compile[cleandirs] = "${B}"
@@ -36,8 +37,8 @@ do_compile[cleandirs] = "${B}"
 do_compile:prepend:p10bmc() {
     install -d ${B}/squashfs-root-combined
 
-    unsquashfs -d ${B}/squashfs-root-everest ${S}/everest/image-hostfw-${VERSION}.hostfw
-    unsquashfs -d ${B}/squashfs-root-rainier ${S}/rainier/image-hostfw-${VERSION}.hostfw
+    unsquashfs -d ${B}/squashfs-root-everest ${UNPACKDIR}/everest/image-hostfw-${VERSION}.hostfw
+    unsquashfs -d ${B}/squashfs-root-rainier ${UNPACKDIR}/rainier/image-hostfw-${VERSION}.hostfw
 
     install -m 0440 ${B}/squashfs-root-everest/* ${B}/squashfs-root-combined/
     install -m 0440 ${B}/squashfs-root-rainier/* ${B}/squashfs-root-combined/
@@ -49,12 +50,12 @@ do_compile:prepend:p10bmc() {
 }
 
 do_compile:append:p10bmc() {
-    install -m 0440 ${S}/image-hostfw ${B}/image/hostfw-a
-    install -m 0440 ${S}/image-hostfw ${B}/image/hostfw-b
-    install -m 0440 ${S}/image-hostfw ${B}/update/image-hostfw
+    install -m 0440 ${UNPACKDIR}/image-hostfw ${B}/image/hostfw-a
+    install -m 0440 ${UNPACKDIR}/image-hostfw ${B}/image/hostfw-b
+    install -m 0440 ${UNPACKDIR}/image-hostfw ${B}/update/image-hostfw
 }
 
 do_install:append:p10bmc() {
     install -d ${D}/${datadir}/hostfw
-    install -m 0644 ${S}/host-fw-elements_lids.json ${D}/${datadir}/hostfw/elements.json
+    install -m 0644 ${UNPACKDIR}/host-fw-elements_lids.json ${D}/${datadir}/hostfw/elements.json
 }
