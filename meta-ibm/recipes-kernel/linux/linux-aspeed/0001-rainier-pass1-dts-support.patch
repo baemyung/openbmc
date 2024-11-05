@@ -10,6 +10,8 @@ Date:   Fri Apr 30 15:15:20 2021 -0500
     Signed-off-by: Eddie James <eajames@linux.ibm.com>
     Signed-off-by: Joel Stanley <joel@jms.id.au>
 
+Upstream-Status: Denied
+
 diff --git a/arch/arm/boot/dts/aspeed/Makefile b/arch/arm/boot/dts/aspeed/Makefile
 index 715106b3baa1..e5bfed0601d9 100644
 --- a/arch/arm/boot/dts/aspeed/Makefile
