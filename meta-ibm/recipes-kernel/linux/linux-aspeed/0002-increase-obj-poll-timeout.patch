@@ -15,6 +15,8 @@ Date:   Tue Feb 20 05:12:50 2024 -0600
     300 was the sweet spot in my testing. 250 showed the issue
     intermittently.
 
+Upstream-Status: Denied
+
     Signed-off-by: Andrew Geissler <geissonator@yahoo.com>
 
 diff --git a/drivers/char/ipmi/kcs_bmc_aspeed.c b/drivers/char/ipmi/kcs_bmc_aspeed.c
