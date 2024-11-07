@@ -3,10 +3,10 @@ Author: Eddie James <eajames@linux.ibm.com>
 Date:   Fri Apr 30 15:15:20 2021 -0500
 
     ARM: dts: aspeed: Add Rainier 2U and 4U device trees for pass 1 hardware
-    
+
     The original BMC card must be supported in the device tree, so add
     new pass 1 device trees for the two relevant Rainier systems.
-    
+
     Signed-off-by: Eddie James <eajames@linux.ibm.com>
     Signed-off-by: Joel Stanley <joel@jms.id.au>
 
@@ -20,6 +20,7 @@ index 715106b3baa1..e5bfed0601d9 100644
  	aspeed-bmc-ibm-rainier-4u.dtb \
 +	aspeed-bmc-ibm-rainier-4u-p1.dtb \
 +	aspeed-bmc-ibm-rainier-p1.dtb \
+ 	aspeed-bmc-ibm-sbp1.dtb \
  	aspeed-bmc-ibm-system1.dtb \
  	aspeed-bmc-intel-s2600wf.dtb \
  	aspeed-bmc-inspur-fp5280g2.dtb \
