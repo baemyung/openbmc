@@ -1302,7 +1302,79 @@
             "platform" : "p10_all", 
             "description" : "ODYGLDNSTRINGFILE-ipl time lid", 
             "comment" : "NA", 
-            "not_supported_yet" : "false" 
+            "not_supported_yet" : "false"
+        },
+        {
+            "element_name": "HB_HLL.RAINIER_2U_XML",
+            "container_text_name": "NOCNTHLL",
+            "short_lid_name": "80d00048",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "HB hash list lid for rainier 2U",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".RAINIER_2U_XML"
+        },
+        {
+            "element_name": "HB_HLL.RAINIER_4U_XML",
+            "container_text_name": "NOCNTHLL",
+            "short_lid_name": "80d00049",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "HB hash list lid for rainier 4U",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".RAINIER_4U_XML"
+        },
+        {
+            "element_name": "HB_HLL.EVEREST_XML",
+            "container_text_name": "NOCNTHLL",
+            "short_lid_name": "80d0004a",
+            "order": "99",
+            "platform" : "p10mr,p10fj",
+            "description" : "HB hash list lid for everest",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".EVEREST_XML"
+        },
+        {
+            "element_name": "HB_HLL.BLUERIDGE_2U_XML",
+            "container_text_name": "NOCNTHLL",
+            "short_lid_name": "80d0004c",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "HB hash list lid for blueridge 2u",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BLUERIDGE_2U_XML"
+        },
+        {
+            "element_name": "HB_HLL.BLUERIDGE_4U_XML",
+            "container_text_name": "NOCNTHLL",
+            "short_lid_name": "80d0004d",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "HB hash list lid for blueridge 4u",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BLUERIDGE_4U_XML"
+        },
+        {
+            "element_name": "HB_HLL.FUJI_XML",
+            "container_text_name": "NOCNTHLL",
+            "short_lid_name": "80d0004e",
+            "order": "99",
+            "platform" : "p10mr,p10fj",
+            "description" : "HB hash list lid for fuji",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".FUJI_XML"
         }
     ]
 }
