@@ -989,6 +989,18 @@
                     [
                         "/org/open_power/control/occ0"
                     ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connected_to",
+                        "fType": "connecting"
+                    },
+                    "paths":
+                    [
+                        "system/chassis/motherboard/disk_backplane0/nvme0/dp0_drive0",
+                        "system/chassis/motherboard/disk_backplane0/nvme1/dp0_drive1"
+                    ]
                 }
             ]
         },
