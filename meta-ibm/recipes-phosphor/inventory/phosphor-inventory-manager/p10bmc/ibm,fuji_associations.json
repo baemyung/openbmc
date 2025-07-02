@@ -1119,6 +1119,17 @@
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot1/pcie_card1/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot1/pcie_card1/cxp_bot"
                     ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm0/cpu0"
+                    ]
                 }
             ]
         },
@@ -1148,6 +1159,17 @@
                     [
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot2/pcie_card2/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot2/pcie_card2/cxp_bot"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm2/cpu1"
                     ]
                 }
             ]
@@ -1179,6 +1201,17 @@
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot3/pcie_card3/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot3/pcie_card3/cxp_bot"
                     ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm2/cpu1"
+                    ]
                 }
             ]
         },
@@ -1208,6 +1241,17 @@
                     [
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot4/pcie_card4/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot4/pcie_card4/cxp_bot"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm2/cpu0"
                     ]
                 }
             ]
@@ -1239,6 +1283,17 @@
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot5/pcie_card5/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot5/pcie_card5/cxp_bot"
                     ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm2/cpu0"
+                    ]
                 }
             ]
         },
@@ -1256,6 +1311,17 @@
                     [
                         "/xyz/openbmc_project/sensors/temperature/PCIe_Cable_Card_C6_Temp",
                         "/xyz/openbmc_project/sensors/temperature/PCIe_Cable_Card_C6_Local_Temp"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm1/cpu1"
                     ]
                 }
             ]
@@ -1286,6 +1352,17 @@
                     [
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot7/pcie_card7/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot7/pcie_card7/cxp_bot"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm1/cpu1"
                     ]
                 }
             ]
@@ -1320,6 +1397,17 @@
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot8/pcie_card8/c8_connector3",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot8/pcie_card8/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot8/pcie_card8/cxp_bot"
+		    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm1/cpu1"
                     ]
                 }
             ]
@@ -1338,6 +1426,17 @@
                     [
                         "/xyz/openbmc_project/sensors/temperature/PCIe_Cable_Card_C9_Temp",
                         "/xyz/openbmc_project/sensors/temperature/PCIe_Cable_Card_C9_Local_Temp"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm1/cpu0"
                     ]
                 }
             ]
@@ -1373,6 +1472,17 @@
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot10/pcie_card10/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot10/pcie_card10/cxp_bot"
                     ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm1/cpu0"
+                    ]
                 }
             ]
         },
@@ -1406,6 +1516,17 @@
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot11/pcie_card11/c11_connector3",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot11/pcie_card11/cxp_top",
                         "/xyz/openbmc_project/inventory/system/chassis/motherboard/pcieslot11/pcie_card11/cxp_bot"
+                    ]
+                },
+                {
+                    "types":
+                    {
+                        "rType": "connecting",
+                        "fType": "connected_to"
+                    },
+                    "paths":
+                    [
+                        "/xyz/openbmc_project/inventory/system/chassis/motherboard/dcm1/cpu0"
                     ]
                 }
             ]
