@@ -7,11 +7,13 @@ DEPENDS += " \
         sdbusplus \
         systemd \
         "
-SRCREV = "d4830e4242f550734f318c84ceac5960fd7f0be3"
+#SRCREV = "d4830e4242f550734f318c84ceac5960fd7f0be3"
+SRCREV = "48f2d5bd75c8335b4085ababae0ff5323e072f12"
 PV = "1.0+git${SRCPV}"
 PR = "r1"
 
-SRC_URI = "git://github.com/openbmc/phosphor-dbus-interfaces;branch=master;protocol=https"
+#SRC_URI = "git://github.com/openbmc/phosphor-dbus-interfaces;branch=master;protocol=https"
+SRC_URI = "git://github.com/baemyung/phosphor-dbus-interfaces;branch=master-add-pciedev-to-cpu;protocol=https"
 
 S = "${WORKDIR}/git"
 
