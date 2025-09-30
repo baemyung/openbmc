@@ -1,0 +1,170 @@
+commit 5d4d6dec97bdfb4a35bfe2489395553eceba63ce
+Author: Eddie James <eajames@linux.ibm.com>
+Date:   Tue Sep 30 10:14:55 2025 -0500
+
+    demux: Only poll for events if bus is ready for tx
+
+    To prevent EBUSY errors.
+
+Upstream-Status: Inappropriate [embedded specific]
+
+    Signed-off-by: Eddie James <eajames@linux.ibm.com>
+
+diff --git a/astlpc.c b/astlpc.c
+index 3ea58aa..489a1fe 100644
+--- a/astlpc.c
++++ b/astlpc.c
+@@ -1185,6 +1185,11 @@ bool mctp_astlpc_tx_done(struct mctp_binding_astlpc *astlpc)
+ 	return astlpc->layout.tx.state == buffer_state_acquired;
+ }
+
++bool mctp_astlpc_tx_ready(struct mctp_binding_astlpc *astlpc)
++{
++	return mctp_is_bus_tx_ready(astlpc->binding.bus);
++}
++
+ int mctp_astlpc_poll(struct mctp_binding_astlpc *astlpc)
+ {
+ 	uint8_t status, data;
+diff --git a/core.c b/core.c
+index c5ded9d..c1557fa 100644
+--- a/core.c
++++ b/core.c
+@@ -1055,6 +1055,11 @@ bool mctp_is_tx_ready(struct mctp *mctp, mctp_eid_t eid)
+ 	return bus->tx_msg == NULL;
+ }
+
++bool mctp_is_bus_tx_ready(struct mctp_bus *bus)
++{
++	return bus->tx_msg == NULL;
++}
++
+ void *mctp_get_alloc_ctx(struct mctp *mctp)
+ {
+ 	return mctp->alloc_ctx;
+diff --git a/libmctp-astlpc.h b/libmctp-astlpc.h
+index 362e4bb..1e153c2 100644
+--- a/libmctp-astlpc.h
++++ b/libmctp-astlpc.h
+@@ -42,6 +42,7 @@ void mctp_astlpc_destroy(struct mctp_binding_astlpc *astlpc);
+ struct mctp_binding *mctp_binding_astlpc_core(struct mctp_binding_astlpc *b);
+
+ bool mctp_astlpc_tx_done(struct mctp_binding_astlpc *astlpc);
++bool mctp_astlpc_tx_ready(struct mctp_binding_astlpc *astlpc);
+ int mctp_astlpc_poll(struct mctp_binding_astlpc *astlpc);
+
+ /* fileio-based interface */
+diff --git a/libmctp-serial.h b/libmctp-serial.h
+index 73a28a4..075d54b 100644
+--- a/libmctp-serial.h
++++ b/libmctp-serial.h
+@@ -35,6 +35,8 @@ void mctp_serial_set_tx_fn(struct mctp_binding_serial *serial,
+ int mctp_serial_rx(struct mctp_binding_serial *serial, const void *buf,
+ 		   size_t len);
+
++bool mctp_serial_tx_ready(struct mctp_binding_serial *serial);
++
+ #ifdef __cplusplus
+ }
+ #endif
+diff --git a/libmctp.h b/libmctp.h
+index 96ee975..41c3eee 100644
+--- a/libmctp.h
++++ b/libmctp.h
+@@ -173,6 +173,7 @@ int mctp_message_tx_request(struct mctp *mctp, mctp_eid_t eid, void *msg,
+ 			    size_t msg_len, uint8_t *alloc_msg_tag);
+
+ bool mctp_is_tx_ready(struct mctp *mctp, mctp_eid_t eid);
++bool mctp_is_bus_tx_ready(struct mctp_bus *bus);
+
+ /* hardware bindings */
+
+diff --git a/serial.c b/serial.c
+index b61991a..cbb1ba3 100644
+--- a/serial.c
++++ b/serial.c
+@@ -386,6 +386,11 @@ int mctp_serial_rx(struct mctp_binding_serial *serial, const void *buf,
+ 	return 0;
+ }
+
++bool mctp_serial_tx_ready(struct mctp_binding_serial *serial)
++{
++	return mctp_is_bus_tx_ready(serial->binding.bus);
++}
++
+ static int mctp_serial_core_start(struct mctp_binding *binding)
+ {
+ 	mctp_binding_set_tx_enabled(binding, true);
+diff --git a/utils/mctp-demux-daemon.c b/utils/mctp-demux-daemon.c
+index f65f4da..f1c8bf5 100644
+--- a/utils/mctp-demux-daemon.c
++++ b/utils/mctp-demux-daemon.c
+@@ -52,6 +52,7 @@ struct binding {
+ 	void (*destroy)(struct mctp *mctp, struct binding *binding);
+ 	int (*init_pollfd)(struct binding *binding, struct pollfd *pollfd);
+ 	int (*process)(struct binding *binding);
++	bool (*tx_ready)(struct binding *binding);
+ 	void *data;
+ };
+
+@@ -208,6 +209,11 @@ static int binding_serial_process(struct binding *binding)
+ 	return mctp_serial_read(binding->data);
+ }
+
++static bool binding_serial_tx_ready(struct binding *binding)
++{
++	return mctp_serial_tx_ready(binding->data);
++}
++
+ static int binding_astlpc_init(struct mctp *mctp, struct binding *binding,
+ 			       mctp_eid_t eid, int n_params,
+ 			       char *const *params __attribute__((unused)))
+@@ -254,6 +260,11 @@ static int binding_astlpc_process(struct binding *binding)
+ 	return mctp_astlpc_poll(binding->data);
+ }
+
++static bool binding_astlpc_tx_ready(struct binding *binding)
++{
++	return mctp_astlpc_tx_ready(binding->data);
++}
++
+ struct binding bindings[] = { {
+ 				      .name = "null",
+ 				      .init = binding_null_init,
+@@ -264,6 +275,7 @@ struct binding bindings[] = { {
+ 				      .destroy = NULL,
+ 				      .init_pollfd = binding_serial_init_pollfd,
+ 				      .process = binding_serial_process,
++				      .tx_ready = binding_serial_tx_ready,
+ 			      },
+ 			      {
+ 				      .name = "astlpc",
+@@ -271,6 +283,7 @@ struct binding bindings[] = { {
+ 				      .destroy = binding_astlpc_destroy,
+ 				      .init_pollfd = binding_astlpc_init_pollfd,
+ 				      .process = binding_astlpc_process,
++				      .tx_ready = binding_astlpc_tx_ready,
+ 			      } };
+
+ struct binding *binding_lookup(const char *name)
+@@ -499,9 +512,19 @@ static int run_daemon(struct ctx *ctx)
+ 			for (i = 0; i < ctx->n_clients; i++) {
+ 				ctx->pollfds[FD_NR + i].fd =
+ 					ctx->clients[i].sock;
+-				ctx->pollfds[FD_NR + i].events = POLLIN;
++				if (ctx->binding->tx_ready(ctx->binding))
++					ctx->pollfds[FD_NR + i].events = POLLIN;
++				else
++					ctx->pollfds[FD_NR + i].events = 0;
+ 			}
+ 			clients_changed = false;
++		} else {
++			for (i = 0; i < ctx->n_clients; i++) {
++				if (ctx->binding->tx_ready(ctx->binding))
++					ctx->pollfds[FD_NR + i].events = POLLIN;
++				else
++					ctx->pollfds[FD_NR + i].events = 0;
++			}
+ 		}
+
+ 		if (ctx->binding->init_pollfd)
