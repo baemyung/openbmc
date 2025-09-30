@@ -14,3 +14,6 @@ do_install:append:ibm-enterprise() {
 }
 
 FILES:${PN}:append = " ${systemd_system_unitdir}/mctp-demux.service.d/service-override.conf"
+
+# TODO - delete once fixed upstream
+SRC_URI:append:p10bmc = " file://0001-demux-only-poll-for-events-if-bus-ready.patch"
