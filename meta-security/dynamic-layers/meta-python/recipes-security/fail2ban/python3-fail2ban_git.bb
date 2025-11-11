@@ -49,7 +49,6 @@ do_install_ptest:append () {
     rm -f ${D}${PTEST_PATH}/bin/fail2ban-python
 }
 
-
 INITSCRIPT_PACKAGES = "${PN}"
 INITSCRIPT_NAME = "fail2ban-server"
 INITSCRIPT_PARAMS = "defaults 25"

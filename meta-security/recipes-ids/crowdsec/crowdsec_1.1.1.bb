@@ -32,7 +32,6 @@ do_install_ () {
    chmod +x -R --silent ${B}/pkg
 }
 
-
 INSANE_SKIP:${PN} = "already-stripped"
 INSANE_SKIP:${PN}-dev = "ldflags"
 
