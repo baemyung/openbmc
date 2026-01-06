@@ -6,7 +6,7 @@ HOST_FW_LICENSE = "Proprietary"
 # Under the covers this will utilize GHE large file storage for anything
 # ending in .hostfw
 # 1. Update the VERSION value with the desired "Package Name" from:
-#    https://rchweb.rchland.ibm.com/afs/rchland/projects/esw/fw1110.html
+#    https://rchweb.rchland.ibm.com/afs/rchland/projects/esw/fw1120.html
 # 2. Download the json file from:
 #    https://rchweb.rchland.ibm.com/afs/rchland/projects/esw/fw1110/Builds/$VERSION/ebmc-pkg/staging-dir/hf-elems-lid-jsons/host-fw-elements_lids.json
 # 3. Download the rainier and everest tarball from:
@@ -18,7 +18,8 @@ HOST_FW_LICENSE = "Proprietary"
 #    new json file (if it changed), the image-hostfw-$VERSION.hostfw files, and this
 #    file.
 
-VERSION:p10bmc ?= "1110.2519.20250502b"
+VERSION:p10bmc ?= "1120.2552.20251224a"
+VERSION_FW1200 ?= "1200.2534.20250930a"
 
 SRC_URI:append:p10bmc = " file://host-fw-elements_lids.json"
 SRC_URI:append:p10bmc = " file://rainier/image-hostfw-${VERSION}.hostfw"
