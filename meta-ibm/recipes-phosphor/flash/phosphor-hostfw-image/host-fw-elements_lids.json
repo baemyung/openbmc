@@ -1314,7 +1314,8 @@
             "comment" : "NA",
             "not_supported_yet" : "false",
             "model_specific_elements" : "true",
-            "strip_string" : ".RAINIER_2U_XML"
+            "strip_string" : ".RAINIER_2U_XML",
+            "restrict_from_hll" : "true"
         },
         {
             "element_name": "HB_HLL.RAINIER_4U_XML",
@@ -1326,7 +1327,8 @@
             "comment" : "NA",
             "not_supported_yet" : "false",
             "model_specific_elements" : "true",
-            "strip_string" : ".RAINIER_4U_XML"
+            "strip_string" : ".RAINIER_4U_XML",
+            "restrict_from_hll" : "true"
         },
         {
             "element_name": "HB_HLL.EVEREST_XML",
@@ -1338,7 +1340,8 @@
             "comment" : "NA",
             "not_supported_yet" : "false",
             "model_specific_elements" : "true",
-            "strip_string" : ".EVEREST_XML"
+            "strip_string" : ".EVEREST_XML",
+            "restrict_from_hll" : "true"
         },
         {
             "element_name": "HB_HLL.BLUERIDGE_2U_XML",
@@ -1350,7 +1353,8 @@
             "comment" : "NA",
             "not_supported_yet" : "false",
             "model_specific_elements" : "true",
-            "strip_string" : ".BLUERIDGE_2U_XML"
+            "strip_string" : ".BLUERIDGE_2U_XML",
+            "restrict_from_hll" : "true"
         },
         {
             "element_name": "HB_HLL.BLUERIDGE_4U_XML",
@@ -1362,7 +1366,8 @@
             "comment" : "NA",
             "not_supported_yet" : "false",
             "model_specific_elements" : "true",
-            "strip_string" : ".BLUERIDGE_4U_XML"
+            "strip_string" : ".BLUERIDGE_4U_XML",
+            "restrict_from_hll" : "true"
         },
         {
             "element_name": "HB_HLL.FUJI_XML",
@@ -1374,7 +1379,112 @@
             "comment" : "NA",
             "not_supported_yet" : "false",
             "model_specific_elements" : "true",
-            "strip_string" : ".FUJI_XML"
+            "strip_string" : ".FUJI_XML",
+            "restrict_from_hll" : "true"
+        },
+        {    
+            "element_name": "WOFDATA.BALCONES_XML.iplTime", 
+            "container_text_name": "NOSBCNTI", 
+            "short_lid_name": "81e006c3", 
+            "order": "99", 
+            "platform" : "p10le,p10br", 
+            "description" : "WOFDATA balcones -ipl time lid", 
+            "comment" : "NA", 
+            "not_supported_yet" : "false"
+        },
+        {
+            "element_name": "WOFDATA.BALCONES_XML",
+            "container_text_name": "WOFDATA",
+            "short_lid_name": "81e006c4",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "WOFDATA for balcones run-time",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BALCONES_XML"
+        },
+        {
+            "element_name": "DEVTREE.BALCONES_XML",
+            "container_text_name": "NOSBCNT",
+            "short_lid_name": "81e006c5",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "DEVTREE Balcones",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BALCONES_XML"
+        },
+        {    
+            "element_name": "HBD.BALCONES_XML.iplTime", 
+            "container_text_name": "NOSBCNTI", 
+            "short_lid_name": "81e006c6", 
+            "order": "99", 
+            "platform" : "p10le,p10br", 
+            "description" : "HBD Balcones - ipl-time lid", 
+            "comment" : "NA", 
+            "not_supported_yet" : "false" 
+        },
+        {
+            "element_name": "HBD.BALCONES_XML",
+            "container_text_name": "HBD",
+            "short_lid_name": "81e006c7",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "Targeting balcones-run-time format",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BALCONES_XML"
+        },
+        {
+            "element_name": "PSPD.BALCONES_XML.iplTime",
+            "container_text_name": "NOSBCNTI",
+            "short_lid_name": "81e006c8",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "PSPD for balcones, ipl-time",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "zero_CRC_in_fips_hdr" : "false"
+        },
+        {
+            "element_name": "PSPD.BALCONES_XML",
+            "container_text_name": "PSPD",
+            "short_lid_name": "81e006c9",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "PSPD for balcones, run-time",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BALCONES_XML"
+        },
+        {
+            "element_name": "HDAT.BALCONES_XML",
+            "container_text_name": "NOSBCNT",
+            "short_lid_name": "81e006ca",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "HDAT Balcones",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BALCONES_XML"
+        },
+        {
+            "element_name": "HB_HLL.BALCONES_XML",
+            "container_text_name": "NOCNTHLL",
+            "short_lid_name": "80d0004f",
+            "order": "99",
+            "platform" : "p10le,p10br",
+            "description" : "HB hash list lid for balcones",
+            "comment" : "NA",
+            "not_supported_yet" : "false",
+            "model_specific_elements" : "true",
+            "strip_string" : ".BALCONES_XML",
+            "restrict_from_hll" : "true"
         }
     ]
 }
