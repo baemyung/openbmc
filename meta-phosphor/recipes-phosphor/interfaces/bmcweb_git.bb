@@ -22,7 +22,6 @@ SRC_URI += " \
     file://run-ptest \
 "
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} += "bmcweb.service bmcweb.socket"
 
 inherit systemd

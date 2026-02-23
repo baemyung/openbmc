@@ -34,7 +34,6 @@ PR = "r1"
 SRC_URI = "git://github.com/openbmc/phosphor-logging;branch=master;protocol=https"
 
 SYSTEMD_PACKAGES = "${LOGGING_PACKAGES}"
-S = "${WORKDIR}/git"
 
 inherit pkgconfig meson
 inherit python3native

@@ -16,7 +16,6 @@ PR = "r1"
 SRC_URI = "git://github.com/openbmc/hiomapd.git;branch=master;protocol=https"
 SRC_URI += "file://99-aspeed-lpc-ctrl.rules"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SUBSTITUTIONS += "FLASH_SIZE:${MBOXD_FLASH_SIZE}:${PN}.service"
 SYSTEMD_SUBSTITUTIONS += "WINDOW_NUM:${MBOXD_WINDOW_NUM}:${PN}.service"
 SYSTEMD_SERVICE:${PN} += "mboxd.service"

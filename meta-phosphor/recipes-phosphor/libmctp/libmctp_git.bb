@@ -20,7 +20,6 @@ SRC_URI = "git://github.com/openbmc/libmctp;branch=master;protocol=https \
 SYSTEMD_SERVICE:${PN} = "mctp-demux.service \
                          mctp-demux.socket \
                         "
-S = "${WORKDIR}/git"
 
 inherit systemd
 inherit autotools pkgconfig

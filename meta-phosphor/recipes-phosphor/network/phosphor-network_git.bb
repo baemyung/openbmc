@@ -23,7 +23,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-networkd;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
 UNPACKDIR = "${WORKDIR}/sources-unpack"
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE:${PN} += "xyz.openbmc_project.Network.service"

@@ -20,8 +20,6 @@ PV = "git${SRCPV}"
 PR = "r1"
 SRC_URI = "git://github.com/openbmc/libpldm;branch=main;protocol=https"
 
-S = "${WORKDIR}/git"
-
 inherit meson
 
 EXTRA_OEMESON:append = " -Dtests=false"

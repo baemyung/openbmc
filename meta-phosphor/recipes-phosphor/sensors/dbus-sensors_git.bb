@@ -96,8 +96,6 @@ SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'smbpbi', \
                                                'xyz.openbmc_project.smbpbisensor.service', \
                                                '', d)}"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig meson systemd
 
 EXTRA_OEMESON:append = " -Dtests=disabled"

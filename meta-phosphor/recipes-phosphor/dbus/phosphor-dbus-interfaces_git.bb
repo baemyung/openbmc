@@ -13,8 +13,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-dbus-interfaces;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig meson
 inherit obmc-phosphor-utils
 inherit phosphor-dbus-yaml

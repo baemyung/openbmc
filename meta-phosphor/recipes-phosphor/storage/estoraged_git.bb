@@ -15,7 +15,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/estoraged.git;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE:${PN} += "xyz.openbmc_project.eStoraged.service"
 

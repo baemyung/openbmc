@@ -14,8 +14,6 @@ PR = "r1"
 SRC_URI = "git://github.com/openbmc/phosphor-user-manager;branch=master;protocol=https"
 SRC_URI += "file://upgrade_hostconsole_group.sh"
 
-S = "${WORKDIR}/git"
-
 inherit meson pkgconfig
 inherit obmc-phosphor-dbus-service
 inherit useradd
@@ -28,7 +26,6 @@ PACKAGECONFIG ?= " \
     "
 PACKAGECONFIG[root-user-mgmt] = "-Droot_user_mgmt=enabled, -Droot_user_mgmt=disabled"
 PACKAGECONFIG[ldap] = "-Dldap=enabled, -Dldap=disabled, nss-pam-ldapd"
-
 
 do_install:append() {
   install -d ${D}${libexecdir}

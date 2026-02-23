@@ -19,7 +19,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-misc;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
 SYSTEMD_PACKAGES = "${PHOSPHOR_MISC_PACKAGES}"
 SYSTEMD_SERVICE:${PN}-first-boot-set-hostname = "first-boot-set-hostname.service"
 SYSTEMD_SERVICE:${PN}-first-boot-set-mac = "first-boot-set-mac@.service"

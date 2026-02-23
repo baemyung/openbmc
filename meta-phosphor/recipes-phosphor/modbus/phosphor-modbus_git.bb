@@ -22,7 +22,6 @@ SRC_URI = "git://github.com/openbmc/phosphor-modbus.git;branch=main;protocol=htt
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'modbus-rtu', \
                                                'xyz.openbmc_project.ModbusRTU.service', \
                                                '', d)}"
-S = "${WORKDIR}/git"
 
 inherit pkgconfig meson systemd
 

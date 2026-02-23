@@ -16,7 +16,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-host-postd;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
 SNOOP_DEVICE ?= "aspeed-lpc-snoop0"
 SERVICE_FILE = "lpcsnoop.service"
 SYSTEMD_PACKAGES = "${PN}"

@@ -16,8 +16,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/webui-vue.git;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
-
 inherit allarch
 
 # Ideally this recipe would use npm.bbclass, but it doesn't.  Since npm uses

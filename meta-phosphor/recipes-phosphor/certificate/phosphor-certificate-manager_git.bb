@@ -21,7 +21,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-certificate-manager;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} = "phosphor-certificate-manager@.service"
 SYSTEMD_SERVICE:${PN} = " \
         phosphor-certificate-manager@.service \

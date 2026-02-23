@@ -20,7 +20,6 @@ PR = "r1"
 PACKAGE_BEFORE_PN:append = " pldmtool pldm-libs"
 RRECOMMENDS:${PN}:append = "pldmtool"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} += "pldmd.service"
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'softoff', 'pldmSoftPowerOff.service', '', d)}"
 

@@ -9,8 +9,6 @@ PV = "1.0+git${SRCPV}"
 
 SRC_URI = "git://github.com/openbmc/phosphor-post-code-manager.git;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
-
 inherit meson pkgconfig systemd
 inherit python3native
 

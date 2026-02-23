@@ -153,7 +153,6 @@ SYSTEMD_SERVICE:${PN}-host-check += "phosphor-reset-host-running@.service"
 FILES:${PN}-host-check = "${bindir}/phosphor-host-reset-recovery"
 SYSTEMD_SERVICE:${PN}-host-check += "phosphor-reset-host-recovery@.service"
 
-
 SYSTEMD_SERVICE:${PN}-reset-sensor-states += "phosphor-reset-sensor-states@.service"
 
 FILES:${PN}-systemd-target-monitor = " \
@@ -291,4 +290,3 @@ SYSTEMD_LINK[vardeps] += "OBMC_CHASSIS_INSTANCES OBMC_HOST_INSTANCES"
 SRC_URI = "git://github.com/openbmc/phosphor-state-manager;branch=master;protocol=https"
 SRCREV = "05d13f76e6711e40c2c4a68b769060aac282df90"
 
-S = "${WORKDIR}/git"

@@ -14,7 +14,6 @@ PV = "0.1+git${SRCPV}"
 SRC_URI = "git://github.com/openbmc/ipmbbridge.git;branch=master;protocol=https"
 
 SYSTEMD_SERVICE:${PN} = "ipmb.service"
-S = "${WORKDIR}/git"
 
 inherit meson pkgconfig systemd
 

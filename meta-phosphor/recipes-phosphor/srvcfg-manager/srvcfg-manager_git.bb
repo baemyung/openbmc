@@ -20,7 +20,6 @@ SRC_URI = "git://github.com/openbmc/service-config-manager;branch=master;protoco
 
 PACKAGECONFIG[persist-settings-to-file] = "-Dpersist-settings-to-file=enabled,-Dpersist-settings-to-file=disabled"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} = "srvcfg-manager.service"
 
 inherit meson pkgconfig systemd

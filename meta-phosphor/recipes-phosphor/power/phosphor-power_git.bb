@@ -11,8 +11,6 @@ inherit python3native
 
 require ${BPN}.inc
 
-S = "${WORKDIR}/git"
-
 POWER_SERVICE_PACKAGES = " \
     ${PN}-chassis \
     ${PN}-cold-redundancy \

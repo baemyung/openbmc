@@ -30,7 +30,6 @@ SRC_URI = "git://github.com/openbmc/entity-manager.git;branch=master;protocol=ht
            file://blocklist.json \
           "
 
-S = "${WORKDIR}/git"
 SYSTEMD_PACKAGES = "${PN} ${EXTRA_ENTITY_MANAGER_PACKAGES}"
 SYSTEMD_SERVICE:${PN} = "xyz.openbmc_project.EntityManager.service"
 SYSTEMD_SERVICE:fru-device = "xyz.openbmc_project.FruDevice.service"

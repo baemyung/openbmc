@@ -9,6 +9,5 @@ PV = "1.0+git${SRCPV}"
 SRC_URI = "git://github.com/openbmc/obmc-ikvm;branch=master;protocol=https"
 
 SYSTEMD_SERVICE:${PN} += "obmc-ikvm.service"
-S = "${WORKDIR}/git"
 
 inherit pkgconfig meson systemd

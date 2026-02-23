@@ -24,7 +24,6 @@ SYSTEMD_SERVICE:${PN}-monitor += "phosphor-multi-gpio-monitor.service"
 SYSTEMD_SERVICE:${PN}-monitor += "phosphor-gpio-monitor@.service"
 SYSTEMD_SERVICE:${PN}-presence += "phosphor-gpio-presence@.service"
 SYSTEMD_SERVICE:${PN}-presence += "phosphor-multi-gpio-presence.service"
-S = "${WORKDIR}/git"
 
 inherit meson pkgconfig
 inherit obmc-phosphor-dbus-service

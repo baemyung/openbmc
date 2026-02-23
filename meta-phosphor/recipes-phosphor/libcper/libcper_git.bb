@@ -12,8 +12,6 @@ SRCREV = "7c410e29164b3509cae16ee8297d4226f02674e9"
 
 SRC_URI = "git://github.com/openbmc/libcper.git;protocol=https;branch=main"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig meson ptest
 
 EXTRA_OEMESON = " \
