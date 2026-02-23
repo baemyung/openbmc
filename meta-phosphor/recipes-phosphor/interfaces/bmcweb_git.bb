@@ -35,6 +35,7 @@ PACKAGECONFIG ??= " \
     mutual-tls-auth \
     redfish-bmc-journal \
     redfish-oem-manager-fan-data \
+    vm-websocket \
 "
 
 PACKAGECONFIG[dbus-rest] = "-Drest=enabled,-Drest=disabled"
@@ -50,6 +51,7 @@ PACKAGECONFIG[redfish-dump-log] = "-Dredfish-dump-log=enabled,-Dredfish-dump-log
 PACKAGECONFIG[redfish-eventlog-managers] = "-Dredfish-eventlog-location=managers,-Dredfish-eventlog-location=systems"
 PACKAGECONFIG[redfish-host-logger] = "-Dredfish-host-logger=enabled,-Dredfish-host-logger=disabled"
 PACKAGECONFIG[redfish-oem-manager-fan-data] = "-Dredfish-oem-manager-fan-data=enabled,-Dredfish-oem-manager-fan-data=disabled"
+PACKAGECONFIG[vm-websocket] = "-Dvm-websocket=enabled,-Dvm-websocket=disabled,,jsnbd"
 
 MUTUAL_TLS_PARSING = "CommonName"
 
@@ -67,7 +69,6 @@ do_install_ptest() {
 }
 
 RDEPENDS:${PN} += " \
-    jsnbd \
     phosphor-objmgr \
 "
 
