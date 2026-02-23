@@ -6,7 +6,7 @@ source /usr/libexec/fb-common-functions
 host_os_status_init() {
   local status
 
-  if [ "$(get_gpio host0-ready)" -eq 0 ]; then
+  if [ "$(get_gpio FM_BIOS_POST_CMPLT_N)" -eq 0 ]; then
       status="Standby"
   else
       status="Inactive"

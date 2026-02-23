@@ -3,6 +3,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 PACKAGECONFIG:remove = "no-warm-reboot"
 
 PACKAGECONFIG:append = " check-fwupdate-before-do-transition"
+PACKAGECONFIG:append = " host-gpio"
 
 # NOTE: The YV5 SCM shares the blade/chassis standby power rail.
 # As a result, the chassis is always powered on and does not support
