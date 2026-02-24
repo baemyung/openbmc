@@ -14,7 +14,7 @@ inherit ${FIT_IMAGE_INHERIT}
 
 # Image composition
 FLASH_KERNEL_IMAGE ?= "fitImage-${INITRAMFS_IMAGE}-${MACHINE}-${MACHINE}"
-FLASH_KERNEL_IMAGE:df-obmc-ubi-fs ?= "fitImage-${MACHINE}.bin"
+FLASH_KERNEL_IMAGE:df-obmc-ubi-fs ?= "zImage-${MACHINE}.bin"
 
 IMAGE_BASETYPE ?= "squashfs-xz"
 IMAGE_BASETYPE:df-obmc-static-norootfs ?= "cpio"
