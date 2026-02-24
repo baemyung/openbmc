@@ -396,34 +396,6 @@
         "Continue": true
     },
     {
-        "Name": "PVDDCR_CPU0_P0_OCP_N",
-        "LineName": "PVDDCR_CPU0_P0_OCP_N",
-        "EventMon": "BOTH",
-        "Targets": {
-            "RISING": [
-                "vr-fault-deassert-log@mb_PVDDCR_CPU0_P0_OCP_N.service"
-            ],
-            "FALLING": [
-                "vr-fault-assert-log@mb_PVDDCR_CPU0_P0_OCP_N.service"
-            ]
-        },
-        "Continue": true
-    },
-    {
-        "Name": "PVDDCR_CPU1_P0_OCP_N",
-        "LineName": "PVDDCR_CPU1_P0_OCP_N",
-        "EventMon": "BOTH",
-        "Targets": {
-            "RISING": [
-                "vr-fault-deassert-log@mb_PVDDCR_CPU1_P0_OCP_N.service"
-            ],
-            "FALLING": [
-                "vr-fault-assert-log@mb_PVDDCR_CPU1_P0_OCP_N.service"
-            ]
-        },
-        "Continue": true
-    },
-    {
         "Name": "PVDDCR_SOC_P0_OCP_N",
         "LineName": "PVDDCR_SOC_P0_OCP_N",
         "EventMon": "BOTH",
