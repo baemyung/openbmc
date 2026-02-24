@@ -4,6 +4,7 @@
 
 # FIT images are now built by the linux-yocto-fitimage recipe
 KERNEL_CLASSES ?= "kernel-fit-extra-artifacts"
+KERNEL_IMAGETYPE ?= "vmlinux"
 KERNEL_IMAGETYPES ?= "vmlinux"
 
 FLASH_SIZE ?= "32768"
