@@ -50,7 +50,7 @@ add_rtr() {
       "$rtr" "$ROUTE_METRIC_LO" >>"$file.d"/10-gateway.conf
     if (( new == 1 )); then
       printf '[Route]\nGateway=%s\nGatewayOnLink=true\nMetric=%d\n' \
-        "$rtr" "$ROUTE_METRIC" >>"$file.d"/10-gateway.conf
+        "$rtr" "$ROUTE_METRIC" >"$file.d"/10-gateway-dyn.conf
       mkdir -p /var/google/last-ra
       printf '%s\n%s\n' "$rtr" "$mac" >"/var/google/last-ra/$RA_IF"
     fi
@@ -98,7 +98,7 @@ default_update_rtr() {
   elif [[ ${op} = "remove" ]]; then
     # Override any existing gateway information within files
     # Make sure we cover `00-*` and `-*` files
-    for file in /run/systemd/network/{00,}-bmc-$RA_IF.network.d/10-gateway.conf; do
+    for file in /run/systemd/network/{00,}-bmc-$RA_IF.network.d/10-gateway-dyn.conf; do
       rm -rf "$file"
     done
 
