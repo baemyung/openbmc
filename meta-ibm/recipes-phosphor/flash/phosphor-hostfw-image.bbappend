@@ -29,8 +29,7 @@ FILES:${PN}:append:p10bmc = " ${datadir}/hostfw/elements.json"
 
 DEPENDS:p10bmc = "squashfs-tools-native"
 
-S = "${WORKDIR}/sources"
-UNPACKDIR = "${S}"
+S = "${UNPACKDIR}"
 B = "${WORKDIR}/build"
 
 do_compile[cleandirs] = "${B}"
