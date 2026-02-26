@@ -199,7 +199,6 @@ gbmc_br_gw_src_update() {
       fi
     done
     (( new_len >= 16 )) && continue
-    echo "GWSRC new_len($new_len) new_metric($new_metric) new_src($new_src) route($route) primary_ip($primary_ip)" >&2
     local rt_metric=4096  # Use a default that will be recognized as invalid
     if [[ "$route" =~ ' metric '([^ ]+) ]]; then
       rt_metric="${BASH_REMATCH[1]}"
