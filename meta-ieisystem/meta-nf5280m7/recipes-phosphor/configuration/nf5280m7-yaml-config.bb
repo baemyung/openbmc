@@ -12,7 +12,7 @@ SRC_URI = " \
         file://nf5280m7-ipmi-sensors.yaml \
         "
 
-S = "${UNPACKDIR}/sources"
+S = "${UNPACKDIR}"
 
 do_install() {
     cat nf5280m7-ipmi-fru.yaml > fru-read.yaml
